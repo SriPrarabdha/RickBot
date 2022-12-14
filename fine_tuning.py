@@ -1,3 +1,5 @@
+# Code run on a Kaggle notebook
+
 import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
@@ -25,8 +27,8 @@ model.from_pretrained("t5","t5-base")
 
 model.train(train_df=train_df, # pandas dataframe with 2 columns: source_text & target_text
             eval_df=test_df, # pandas dataframe with 2 columns: source_text & target_text
-            source_max_token_len = 150, 
-            target_max_token_len = 150,
+            source_max_token_len = 256, 
+            target_max_token_len = 256,
             batch_size = 8,
             max_epochs = 12,
             use_gpu = True,
